@@ -44,6 +44,8 @@ module.exports = {
             {
               loader: 'css-loader',
               options: {
+                modules: true,
+                localIdentName: DEV ? '[name]-[local]-[hash:base64:5]' : '[hash:base64]',
                 importLoaders: true,
                 minimize: DEV ? false : { discardComments: { removeAll: true } }
               }

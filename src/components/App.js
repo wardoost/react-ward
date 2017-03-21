@@ -1,11 +1,11 @@
 import React from 'react'
 import logo from 'assets/logo.svg'
-import './App.css'
+import styles from './App.css'
 
 const App = () => (
   <div>
-    <img className='logo' src={logo} />
-    <h1 className='title'>Hello Ward!</h1>
+    <img className={styles.logo} src={logo} />
+    <h1 className={styles.title}>Hello Ward!</h1>
   </div>
 )
 

@@ -4,6 +4,7 @@
 ## Features
 - [React](https://facebook.github.io/react/) as the view
 - Source bundled with [Webpack 2](https://webpack.js.org/)
+- [CSS Modules](https://github.com/css-modules/css-modules) for **modular** and **reusable** CSS
 - Standard [JS](http://standardjs.com/) and [CSS](https://github.com/stylelint/stylelint-config-standard) linting configuration
 
 ## Installation
