@@ -2,6 +2,7 @@ const {resolve} = require('path')
 const webpack = require('webpack')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const DEV = process.env.NODE_ENV === 'development'
 
@@ -35,16 +36,23 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 1
+        use: ExtractTextPlugin.extract({
+          fallback: [{
+            loader: 'style-loader'
+          }],
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                importLoaders: true,
+                minimize: DEV ? false : { discardComments: { removeAll: true } }
+              }
+            },
+            {
+              loader: 'postcss-loader'
             }
-          },
-          'postcss-loader'
-        ]
+          ]
+        })
       },
       {
         test: /\.(svg|jpe?g|png|gif)(\?.*)?$/i,
@@ -61,6 +69,11 @@ module.exports = {
   plugins: ([
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+    }),
+    new ExtractTextPlugin({
+      filename: '[name].[contenthash].css',
+      allChunks: true,
+      disable: DEV
     }),
     new HtmlWebpackPlugin({
       inject: true,
