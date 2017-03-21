@@ -1,6 +1,9 @@
 const {resolve} = require('path')
 const webpack = require('webpack')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+const DEV = process.env.NODE_ENV === 'development'
 
 module.exports = {
   context: resolve(__dirname, 'src'),
@@ -14,7 +17,8 @@ module.exports = {
   },
   output: {
     path: resolve(__dirname, 'build'),
-    filename: '[name].js'
+    filename: DEV ? '[name].js' : '[name].[hash].js',
+    chunkFilename: DEV ? '[name].js' : '[name].[chunkhash].js'
   },
   module: {
     rules: [
@@ -47,17 +51,27 @@ module.exports = {
         use: {
           loader: 'url-loader',
           options: {
-            name: `[path][name].[ext]`,
+            name: `[path][name]${DEV ? '' : '.[hash:base64]'}.[ext]`,
             limit: 8192
           }
         }
       }
     ]
   },
-  plugins: [
+  plugins: ([
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+    }),
     new HtmlWebpackPlugin({
       inject: true,
       template: './index.html'
     })
-  ]
+  ]).concat(DEV ? [] : [
+    new CleanWebpackPlugin('./build/*'),
+    new webpack.optimize.UglifyJsPlugin({
+      output: {
+        comments: false
+      }
+    })
+  ])
 }
