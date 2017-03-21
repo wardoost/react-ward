@@ -6,14 +6,20 @@ First
 npm install
 ```
 
-then
+then develop
 
 ```sh
 npm run develop
 ```
 
-or
+or build
 
 ```sh
 npm run build
+```
+
+or lint
+
+```sh
+npm run lint
 ```
