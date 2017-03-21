@@ -41,6 +41,16 @@ module.exports = {
           },
           'postcss-loader'
         ]
+      },
+      {
+        test: /\.(svg|jpe?g|png|gif)(\?.*)?$/i,
+        use: {
+          loader: 'url-loader',
+          options: {
+            name: `[path][name].[ext]`,
+            limit: 8192
+          }
+        }
       }
     ]
   },

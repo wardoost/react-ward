@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import App from 'components/App'
 import 'normalize.css/normalize.css'
-import 'index.css'
 
 ReactDOM.render(
-  <h1 className='title'>Hello Ward!</h1>,
+  <App />,
   document.getElementById('root')
 )

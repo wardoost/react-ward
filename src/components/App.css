@@ -1,0 +1,10 @@
+.logo {
+  display: block;
+  max-width: 100%;
+  width: 200px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+}
