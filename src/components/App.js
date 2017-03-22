@@ -3,9 +3,12 @@ import logo from 'assets/logo.svg'
 import styles from './App.css'
 
 const App = () => (
-  <div>
-    <img className={styles.logo} src={logo} />
-    <h1 className={styles.title}>Hello Ward!</h1>
+  <div className={styles.app}>
+    <div className={styles.header}>
+      <img className={styles.logo} src={logo} alt={process.env.TITLE} />
+      <h2>{process.env.TITLE}</h2>
+    </div>
+    <p>To get started, edit files in <code>src</code> and save to reload.</p>
   </div>
 )
 

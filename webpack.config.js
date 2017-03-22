@@ -5,6 +5,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const DEV = process.env.NODE_ENV === 'development'
+const TITLE = require('./package.json').name
+  .replace(/-/g, ' ')
+  .replace(/\w\S*/g, str => str.charAt(0).toUpperCase() + str.substr(1).toLowerCase())
 
 module.exports = {
   context: resolve(__dirname, 'src'),
@@ -70,7 +73,8 @@ module.exports = {
   },
   plugins: ([
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+      'process.env.TITLE': JSON.stringify(TITLE)
     }),
     new ExtractTextPlugin({
       filename: '[name].[contenthash].css',
@@ -79,7 +83,9 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       inject: true,
-      template: './index.html'
+      template: './index.ejs',
+      minify: { collapseWhitespace: true },
+      title: TITLE
     })
   ]).concat(DEV ? [] : [
     new CleanWebpackPlugin('./build/*'),
