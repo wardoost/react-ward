@@ -14,6 +14,7 @@ module.exports = {
   entry: {
     'main': [
       'babel-polyfill',
+      'react-hot-loader/patch',
       './index'
     ]
   },
@@ -23,7 +24,8 @@ module.exports = {
   output: {
     path: resolve(__dirname, 'build'),
     filename: DEV ? '[name].js' : '[name].[hash].js',
-    chunkFilename: DEV ? '[name].js' : '[name].[chunkhash].js'
+    chunkFilename: DEV ? '[name].js' : '[name].[chunkhash].js',
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -88,13 +90,16 @@ module.exports = {
       minify: { collapseWhitespace: true },
       title: TITLE
     })
-  ]).concat(DEV ? [] : [
+  ]).concat(DEV ? [
+    new webpack.NamedModulesPlugin()
+  ] : [
     new CleanWebpackPlugin('./build/*'),
     new webpack.optimize.UglifyJsPlugin({
       output: {
         comments: false
       }
-    })
+    }),
+    new webpack.HashedModuleIdsPlugin()
   ]),
   stats: {
     children: false,
