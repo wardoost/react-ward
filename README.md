@@ -8,6 +8,7 @@
 - [CSS Modules](https://github.com/css-modules/css-modules) for **modular** and **reusable** CSS
 - Standard [JS](http://standardjs.com/) and [CSS](https://github.com/stylelint/stylelint-config-standard) linting configuration
 - Testing with [Jest](https://facebook.github.io/jest/)
+- Long term browser caching of assets with automated cache invalidation
 
 ## Installation
 

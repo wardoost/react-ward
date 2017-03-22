@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
 
 const DEV = process.env.NODE_ENV === 'development'
 const TITLE = require('./package.json').name
@@ -12,8 +13,12 @@ const TITLE = require('./package.json').name
 module.exports = {
   context: resolve(__dirname, 'src'),
   entry: {
-    'main': [
+    vendor: [
       'babel-polyfill',
+      'react',
+      'react-dom'
+    ],
+    main: [
       'react-hot-loader/patch',
       './index'
     ]
@@ -23,7 +28,7 @@ module.exports = {
   },
   output: {
     path: resolve(__dirname, 'build'),
-    filename: DEV ? '[name].js' : '[name].[hash].js',
+    filename: DEV ? '[name].js' : '[name].[chunkhash].js',
     chunkFilename: DEV ? '[name].js' : '[name].[chunkhash].js',
     publicPath: '/'
   },
@@ -79,6 +84,13 @@ module.exports = {
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
       'process.env.TITLE': JSON.stringify(TITLE)
     }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: ['vendor', 'manifest'],
+      minChunks: Infinity
+    }),
+    new webpack.SourceMapDevToolPlugin({
+      exclude: 'manifest'
+    }),
     new ExtractTextPlugin({
       filename: '[name].[contenthash].css',
       allChunks: true,
@@ -89,6 +101,9 @@ module.exports = {
       template: './index.ejs',
       minify: { collapseWhitespace: true },
       title: TITLE
+    }),
+    new ScriptExtHtmlWebpackPlugin({
+      inline: ['manifest']
     })
   ]).concat(DEV ? [
     new webpack.NamedModulesPlugin()
