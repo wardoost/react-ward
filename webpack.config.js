@@ -13,6 +13,7 @@ module.exports = {
   context: resolve(__dirname, 'src'),
   entry: {
     'main': [
+      'babel-polyfill',
       './index'
     ]
   },
@@ -94,5 +95,10 @@ module.exports = {
         comments: false
       }
     })
-  ])
+  ]),
+  stats: {
+    children: false,
+    chunks: false,
+    modules: false
+  }
 }
