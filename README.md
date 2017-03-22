@@ -6,6 +6,7 @@
 - Source bundled with [Webpack 2](https://webpack.js.org/)
 - [CSS Modules](https://github.com/css-modules/css-modules) for **modular** and **reusable** CSS
 - Standard [JS](http://standardjs.com/) and [CSS](https://github.com/stylelint/stylelint-config-standard) linting configuration
+- Testing with [Jest](https://facebook.github.io/jest/)
 
 ## Installation
 
@@ -27,6 +28,20 @@ Lint your code and automatically fix lint errors with [ESLint](http://eslint.org
 
 ```sh
 npm run lint
+```
+
+## Testing
+
+Run all tests and watch for file changes to restart the tests.
+
+```sh
+npm run test
+```
+
+Create and open the coverage report of all your tests.
+
+```sh
+npm run coverage
 ```
 
 ## Deployment

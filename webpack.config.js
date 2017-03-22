@@ -60,7 +60,7 @@ module.exports = {
         })
       },
       {
-        test: /\.(svg|jpe?g|png|gif)(\?.*)?$/i,
+        test: /\.(svg|woff2?|jpe?g|png|gif)(\?.*)?$/i,
         use: {
           loader: 'url-loader',
           options: {
