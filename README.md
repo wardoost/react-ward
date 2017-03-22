@@ -30,6 +30,12 @@ Lint your code and automatically fix lint errors with [ESLint](http://eslint.org
 npm run lint
 ```
 
+Starts a static file server with [serve](https://github.com/zeit/serve) with the `build` folder as root.
+
+```sh
+npm start
+```
+
 ## Testing
 
 Run all tests and watch for file changes to restart the tests.
