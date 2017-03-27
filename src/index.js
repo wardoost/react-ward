@@ -1,3 +1,4 @@
+// @flow
 import 'babel-polyfill'
 import React from 'react'
 import ReactDOM from 'react-dom'
@@ -27,5 +28,6 @@ const render = Component => {
 render(App)
 
 if (module.hot) {
+  // $FlowFixMe
   module.hot.accept('components/App', () => { render(App) })
 }

@@ -3,16 +3,8 @@
 }
 
 .header {
-  padding: 15px;
   background-color: #222;
   color: #fff;
-}
-
-.logo {
-  display: block;
-  max-width: 100%;
-  width: 250px;
-  margin: 0 auto;
 }
 
 code {
