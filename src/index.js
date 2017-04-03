@@ -3,8 +3,7 @@ import 'babel-polyfill'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {AppContainer} from 'react-hot-loader'
-import App from 'components/App'
-import 'normalize.css/normalize.css'
+import App from 'containers/App'
 
 if (process.env.NODE_ENV === 'production') {
   // Disable React devtools
@@ -29,5 +28,5 @@ render(App)
 
 if (module.hot) {
   // $FlowFixMe
-  module.hot.accept('components/App', () => { render(App) })
+  module.hot.accept('containers/App', () => { render(App) })
 }

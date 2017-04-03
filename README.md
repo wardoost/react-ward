@@ -24,7 +24,7 @@ npm install
 Start a web server and open your app in your browser. When you make changes in the `src` folder, it will rebuild your app and refresh your browser.
 
 ```sh
-npm run develop
+npm run dev
 ```
 
 Lint your code and automatically fix lint errors with [ESLint](http://eslint.org/) for JS and with [stylefmt](https://github.com/morishitter/stylefmt) for CSS where possible.

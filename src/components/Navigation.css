@@ -1,0 +1,22 @@
+.nav {
+  background-color: #222;
+}
+
+.brand {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.logo {
+  display: block;
+  height: 48px;
+}
+
+.menu {
+  display: inline-block;
+  vertical-align: middle;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  height: 48px;
+}
