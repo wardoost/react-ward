@@ -5,7 +5,7 @@
 - [React](https://facebook.github.io/react/) as the view
 - Source bundled with [Webpack 2](https://webpack.js.org/)
 - HMR React components with [React Hot Loader](http://gaearon.github.io/react-hot-loader/)
-- [CSS Modules](https://github.com/css-modules/css-modules) for **modular** and **reusable** CSS
+- [CSS Modules](https://github.com/css-modules/css-modules) and [cssnext](http://cssnext.io/) giving you CSS superpowers
 - JS type checking with [FlowType](https://flowtype.org/)
 - Standard [JS](http://standardjs.com/) and [CSS](https://github.com/stylelint/stylelint-config-standard) linting configuration
 - Testing with [Jest](https://facebook.github.io/jest/)
