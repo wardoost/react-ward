@@ -1,0 +1,30 @@
+:root {
+  /* colors */
+  --primary: rgb(0, 235, 149);
+  --secondary: rgb(85, 0, 255);
+  --success: rgb(103, 218, 0);
+  --warning: rgb(218, 177, 0);
+  --error: rgb(218, 39, 0);
+
+  /* typography */
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  --fontWeight: 300;
+  --lineHeight: 1.6;
+  --fontHeading: var(--font);
+  --fontWeightHeading: 600;
+  --lineHeightHeading: var(--lineHeight);
+  --fontMonospace: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  --fontWeightMonospace: var(--fontWeight);
+  --lineHeightMonospace: var(--lineHeight);
+
+  /* padding */
+  --paddingXs: 5px;
+  --paddingSm: 10px;
+  --paddingMd: 20px;
+  --paddingLg: 30px;
+  --paddingXl: 50px;
+
+  /* various */
+  --radius: 5px;
+  --navHeight: 48px;
+}

@@ -1,5 +1,44 @@
+@import '../constants.css';
 @import 'normalize.css/normalize.css';
+
+html {
+  font-family: var(--font);
+  font-weight: var(--fontWeight);
+  line-height: var(--lineHeight);
+}
 
 * {
   box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--fontHeading);
+  font-weight: var(--fontWeightHeading);
+  line-height: var(--lineHeightHeading);
+}
+
+a {
+  color: var(--primary);
+}
+
+main a {
+  text-decoration: none;
+  border-bottom: 1px var(--primary) dotted;
+
+  &:hover {
+    border-bottom-style: solid;
+  }
+}
+
+code {
+  font-family: var(--fontMonospace);
+  font-weight: var(--fontWeightMonospace);
+  line-height: var(--lineHeightMonospace);
+  background-color: gray(95%);
+  padding: 0 0.2em;
 }

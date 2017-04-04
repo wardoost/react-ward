@@ -1,5 +1,7 @@
+@import '../constants.css';
+
 .nav {
-  background-color: #222;
+  background-color: gray(10%);
 }
 
 .brand {
@@ -9,7 +11,7 @@
 
 .logo {
   display: block;
-  height: 48px;
+  height: var(--navHeight);
 }
 
 .menu {
@@ -18,5 +20,5 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-  height: 48px;
+  height: var(--navHeight);
 }

@@ -5,7 +5,9 @@ import Navigation from 'components/Navigation'
 const Layout = (props: Object) => (
   <div>
     <Navigation />
-    {props.children}
+    <main>
+      {props.children}
+    </main>
   </div>
 )
 
