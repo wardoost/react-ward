@@ -3,8 +3,8 @@
 
 html {
   font-family: var(--font);
-  font-weight: var(--fontWeight);
-  line-height: var(--lineHeight);
+  font-weight: 300;
+  line-height: 1.6;
 }
 
 * {
@@ -17,9 +17,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--fontHeading);
-  font-weight: var(--fontWeightHeading);
-  line-height: var(--lineHeightHeading);
+  font-family: var(--font);
+  font-weight: 600;
+  line-height: 1.4;
 }
 
 a {
@@ -37,8 +37,7 @@ main a {
 
 code {
   font-family: var(--fontMonospace);
-  font-weight: var(--fontWeightMonospace);
-  line-height: var(--lineHeightMonospace);
+  font-weight: 300;
   background-color: gray(95%);
   padding: 0 0.2em;
 }

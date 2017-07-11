@@ -16,7 +16,7 @@
 Install dependencies to get started.
 
 ```sh
-npm install
+yarn install
 ```
 
 ## Development
@@ -24,19 +24,19 @@ npm install
 Start a web server and open your app in your browser. When you make changes in the `src` folder, it will rebuild your app and refresh your browser.
 
 ```sh
-npm run dev
+yarn dev
 ```
 
 Lint your code and automatically fix lint errors with [ESLint](http://eslint.org/) for JS and with [stylefmt](https://github.com/morishitter/stylefmt) for CSS where possible.
 
 ```sh
-npm run lint
+yarn lint
 ```
 
 Starts a static file server with [serve](https://github.com/zeit/serve) with the `build` folder as root.
 
 ```sh
-npm start
+yarn start
 ```
 
 ## Testing
@@ -44,13 +44,13 @@ npm start
 Run all tests and watch for file changes to restart the tests.
 
 ```sh
-npm run test
+yarn test
 ```
 
 Create and open the coverage report of all your tests.
 
 ```sh
-npm run coverage
+yarn coverage
 ```
 
 ## Deployment
@@ -58,5 +58,5 @@ npm run coverage
 Create production build in the `build` folder. You can deploy this folder to wherever you want.
 
 ```sh
-npm run build
+yarn build
 ```
