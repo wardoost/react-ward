@@ -41,10 +41,16 @@ yarn start
 
 ## Testing
 
-Run all tests and watch for file changes to restart the tests.
+Run all tests.
 
 ```sh
 yarn test
+```
+
+Run all tests and watch for file changes to restart the tests.
+
+```sh
+yarn test:watch
 ```
 
 Create and open the coverage report of all your tests.
@@ -59,4 +65,12 @@ Create production build in the `build` folder. You can deploy this folder to whe
 
 ```sh
 yarn build
+```
+
+## Updating
+
+Install [updtr](https://github.com/peerigon/updtr) to update dependencies
+
+```sh
+npm install -g updtr && updtr
 ```

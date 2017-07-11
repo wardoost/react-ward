@@ -15,7 +15,8 @@
     "lint:js": "eslint src --fix && flow check",
     "lint:css": "stylefmt --config .stylelintrc --recursive src/**/*.css",
     "lint": "npm run lint:js && npm run lint:css",
-    "test": "jest --config=.jestrc --watchAll",
+    "test": "jest --config=.jestrc",
+    "test:watch": "npm run test -- --watchAll",
     "precoverage": "jest --config=.jestrc --coverage",
     "coverage": "open coverage/index.html"
   },
